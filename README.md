@@ -12,6 +12,29 @@ sudo apt install unzip ; cd ~ ; wget https://releases.hashicorp.com/terraform/0.
 terraform init && mkdir -p ~/.terraform.d/plugins && cd ~/.terraform.d/plugins && wget https://github.com/squat/terraform-provider-vultr/releases/download/v0.1.9/terraform-provider-vultr_v0.1.9_linux_amd64.tar.gz && wget https://github.com/squat/terraform-provider-vultr/releases/download/v0.1.9/terraform-provider-vultr_v0.1.9_linux_amd64.tar.gz.asc && tar -xzf terraform-provider-vultr_*.tar.gz && ls -hal && cd ~
 ```
 
+
+* Add your API Key
+
+* Change the SSH key value to match your key name
+
+### Initialize and Plan
+
+Change directories to your working terraform plan.
+```
+terraform init
+```
+
+Test your plan.
+```
+terraform plan
+```
+
+If you like it, apply it.
+```
+terraform apply
+```
+
+
 ## Examples
 
 ```tf
