@@ -1,4 +1,4 @@
-// Create a Vultr virtual machine.
+# Create a Vultr virtual machine.
 resource "vultr_instance" "instance-5" {
   name              = "ubuntu16"
   region_id         = "${data.vultr_region.silicon_valley.id}"
