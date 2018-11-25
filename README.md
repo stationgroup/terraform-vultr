@@ -20,7 +20,7 @@ git clone https://github.com/stationgroup/terraform-vultr.git
 
 * Add your API Key to `provider.tf`
 
-* Change the SSH key value to match your key name in `instance_*.tf`
+* Change the SSH key value to match your key name in `resources.tf`
 
 ### Initialize and Plan
 
