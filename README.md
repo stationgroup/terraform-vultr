@@ -39,6 +39,9 @@ If you like it, apply it.
 terraform apply
 ```
 
+### Note
+
+If you don't plan on assigning your instances IP to a DNS entry you can safely remove `dns.tf` and `instance_vpn.tf`.
 
 ## Examples
 
