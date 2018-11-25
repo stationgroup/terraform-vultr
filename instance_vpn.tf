@@ -11,6 +11,10 @@ resource "vultr_instance" "instance-vpn" {
 #  startup_script_id = "ubuntu-ansible-ready"
   tag               = "ubuntu18"
   firewall_group_id = "${vultr_firewall_group.ssh-mumble.id}"
+
+  lifecycle {
+    create_before_destroy = "true"
+  }
 }
 
 # Display public IP
