@@ -4,7 +4,7 @@ resource "vultr_instance" "instance-vpn" {
   region_id         = "${data.vultr_region.silicon_valley.id}"
   plan_id           = "${data.vultr_plan.vc2-5.id}"
 #  os_id             = "${data.vultr_os.ubuntu18.id}"
-  snapshot_id        = "b615bd505536d"
+  snapshot_id        = "b615fffff69"
   ssh_key_ids       = ["${data.vultr_ssh_key.primary.id}"]
   hostname          = "instance-vpn"
   auto_backups      = "true"
