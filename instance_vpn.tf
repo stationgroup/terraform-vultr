@@ -3,16 +3,19 @@ resource "vultr_instance" "instance-vpn" {
   name              = "ubuntu18-vpn"
   region_id         = "${data.vultr_region.silicon_valley.id}"
   plan_id           = "${data.vultr_plan.vc2-5.id}"
-  os_id             = "${data.vultr_os.ubuntu18.id}"
+#  os_id             = "${data.vultr_os.ubuntu18.id}"
+  snapshot_id        = "b615bd505536d"
   ssh_key_ids       = ["${data.vultr_ssh_key.primary.id}"]
   hostname          = "instance-vpn"
+  auto_backups      = "true"
+#  startup_script_id = "ubuntu-ansible-ready"
   tag               = "ubuntu18"
   firewall_group_id = "${vultr_firewall_group.ssh-mumble.id}"
 }
 
 # Display public IP
 output ip_addresses {
-  value = "${concat(vultr_instance.instance-vpn.*.ipv4_address, list(vultr_instance.instance-vpn.ipv4_address))}"
+  value = "${vultr_instance.instance-vpn.ipv4_address}"
 }
 
 # Create a new DNS record.
